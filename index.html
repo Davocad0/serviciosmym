@@ -189,7 +189,8 @@ h2 {
 
 /* ---------- Lista de precios ---------- */
 .prices { display: grid; grid-template-columns: 1fr; gap: 18px; }
-@media (min-width: 760px) { .prices { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 680px) { .prices { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 980px) { .prices { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .plist { background: var(--surface); border-radius: var(--r); box-shadow: var(--shadow); padding: 18px 20px 12px; min-width: 0; }
 .plist h3 {
   margin: 0 0 8px; font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--red);
@@ -261,7 +262,7 @@ footer p { margin: 0 0 6px; max-width: 70ch; }
   <div class="wrap">
     <div class="brand">
       <span class="mark" aria-label="M y M">M<span class="amp">&amp;</span>M</span>
-      <span class="brand-sub"><b>Servicios Gastronómicos</b>Marcial y Marianela · Santa Cruz</span>
+      <span class="brand-sub"><b>Servicios Gastronómicos</b>Mejores Momentos · Santa Cruz</span>
     </div>
     <h1>Menú del recreo</h1>
     <p class="lede">Fotos reales de lo que servimos en nuestro kiosco escolar, con los precios de 2026.</p>
@@ -319,7 +320,7 @@ footer p { margin: 0 0 6px; max-width: 70ch; }
       <article class="card">
         <figure class="photo">
           <img src="fotos/pollo.webp" srcset="fotos/pollo-640.webp 640w, fotos/pollo.webp 900w" sizes="(min-width: 940px) 340px, (min-width: 600px) 46vw, 100vw" width="900" height="900" alt="Presa grande de pollo frito apanado sobre papas fritas, en un plato negro" loading="lazy">
-          <span class="tag"><small>Bs</small>9</span>
+          <span class="tag"><small>Bs</small>10</span>
         </figure>
         <div class="card-body">
           <h3>Pollo con papas</h3>
@@ -378,42 +379,49 @@ footer p { margin: 0 0 6px; max-width: 70ch; }
   <section id="precios" aria-labelledby="h-precios">
     <div class="sec-head">
       <h2 id="h-precios">Lista de precios 2026</h2>
-      <p class="note">Vigente en nuestro kiosco escolar</p>
+      <p class="note">Vigente en nuestro kiosco escolar, octubre de 2026</p>
     </div>
     <div class="prices">
       <div class="plist">
-        <h3>Comidas</h3>
+        <h3>Platos y sándwiches</h3>
         <ul>
-          <li><span>Empanada de queso</span><span class="dots"></span><span class="pr">Bs 5</span></li>
-          <li><span>Empanada de pollo</span><span class="dots"></span><span class="pr">Bs 6</span></li>
-          <li><span>Empanada de choclo</span><span class="dots"></span><span class="pr">Bs 8</span></li>
-          <li><span>Árabe</span><span class="dots"></span><span class="pr">Bs 7</span></li>
+          <li><span>Pollo con papas</span><span class="dots"></span><span class="pr">Bs 10</span></li>
+          <li><span>Nuggets con papas</span><span class="dots"></span><span class="pr">Bs 10</span></li>
+          <li><span>Salchipapa</span><span class="dots"></span><span class="pr">Bs 5</span></li>
+          <li><span>Hamburguesa</span><span class="dots"></span><span class="pr">Bs 10</span></li>
+          <li><span>Lomito</span><span class="dots"></span><span class="pr">Bs 10</span></li>
+          <li><span>Milanesa</span><span class="dots"></span><span class="pr">Bs 8</span></li>
+          <li><span>Choripán</span><span class="dots"></span><span class="pr">Bs 8</span></li>
+          <li><span>Panchito</span><span class="dots"></span><span class="pr">Bs 4</span></li>
+          <li><span>Sándwich de miga</span><span class="dots"></span><span class="pr">Bs 8</span></li>
+          <li><span>Tostada</span><span class="dots"></span><span class="pr">Bs 5</span></li>
+        </ul>
+      </div>
+      <div class="plist">
+        <h3>Salteñas y horneados</h3>
+        <ul>
           <li><span>Salteña</span><span class="dots"></span><span class="pr">Bs 7</span></li>
-          <li><span>Tacos</span><span class="dots"></span><span class="pr">Bs 8</span></li>
-          <li><span>Niño envuelto</span><span class="dots"></span><span class="pr">Bs 7</span></li>
+          <li><span>Empanada de choclo</span><span class="dots"></span><span class="pr">Bs 8</span></li>
+          <li><span>Empanada de carne o pollo</span><span class="dots"></span><span class="pr">Bs 7</span></li>
+          <li><span>Empanada de queso</span><span class="dots"></span><span class="pr">Bs 5</span></li>
+          <li><span>Árabe</span><span class="dots"></span><span class="pr">Bs 7</span></li>
           <li><span>Asadito</span><span class="dots"></span><span class="pr">Bs 6</span></li>
           <li><span>Arepa</span><span class="dots"></span><span class="pr">Bs 5</span></li>
-          <li><span>Pizza</span><span class="dots"></span><span class="pr">Bs 8</span></li>
-          <li><span>Pollo con papas</span><span class="dots"></span><span class="pr">Bs 9</span></li>
-          <li><span>Nuggets con papas</span><span class="dots"></span><span class="pr">Bs 10</span></li>
-          <li><span>Hamburguesa</span><span class="dots"></span><span class="pr">Bs 10</span></li>
-          <li><span>Milanesa</span><span class="dots"></span><span class="pr">Bs 8</span></li>
-          <li><span>Salchipapa</span><span class="dots"></span><span class="pr">Bs 5</span></li>
+          <li><span>Pizza</span><span class="dots"></span><span class="pr">Bs 5</span></li>
         </ul>
       </div>
       <div class="plist">
         <h3>Panadería y dulces</h3>
         <ul>
           <li><span>Pan de arroz</span><span class="dots"></span><span class="pr">Bs 5</span></li>
-          <li><span>Cuñapé</span><span class="dots"></span><span class="pr">Bs 5</span></li>
-          <li><span>Croissant dulce</span><span class="dots"></span><span class="pr">Bs 6</span></li>
           <li><span>Croissant de queso y mortadela</span><span class="dots"></span><span class="pr">Bs 9</span></li>
-          <li><span>Croissant con huevo</span><span class="dots"></span><span class="pr">Bs 10</span></li>
           <li><span>Croissant con frutilla</span><span class="dots"></span><span class="pr">Bs 10</span></li>
-          <li><span>Donas</span><span class="dots"></span><span class="pr">Bs 5</span></li>
+          <li><span>Bombita</span><span class="dots"></span><span class="pr">Bs 5</span></li>
+          <li><span>Dona</span><span class="dots"></span><span class="pr">Bs 5</span></li>
           <li><span>Brownie</span><span class="dots"></span><span class="pr">Bs 8</span></li>
-          <li><span>Galletas</span><span class="dots"></span><span class="pr">Bs 7</span></li>
-          <li><span>Pay</span><span class="dots"></span><span class="pr">Bs 7</span></li>
+          <li><span>Pie de limón</span><span class="dots"></span><span class="pr">Bs 7</span></li>
+          <li><span>Torta</span><span class="dots"></span><span class="pr">Bs 10</span></li>
+          <li><span>Tarta</span><span class="dots"></span><span class="pr">Bs 10</span></li>
         </ul>
       </div>
     </div>
