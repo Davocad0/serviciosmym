@@ -3,10 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Fotos y precios de nuestros productos. Atención de kioscos y comedores escolares en Santa Cruz desde 1991.">
+<title>Servicios M&amp;M | Kioscos escolares en Santa Cruz desde 1991</title>
+<meta name="description" content="Fotos, precios y propuesta de Servicios Gastronómicos M&amp;M (Mejores Momentos): kioscos y comedores escolares en Santa Cruz desde 1991.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#C7362B">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Servicios Gastronómicos M&amp;M">
-<meta property="og:title" content="Servicios M&amp;M · Menú del recreo">
+<meta property="og:title" content="Servicios M&amp;M, menú del recreo">
 <meta property="og:description" content="Fotos y precios de nuestros productos. Kioscos y comedores escolares en Santa Cruz desde 1991.">
 <meta property="og:url" content="https://serviciosmym.vercel.app/">
 <meta property="og:locale" content="es_BO">
@@ -14,484 +17,494 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#C7362B">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C7362B'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%23FFC83A'/%3E%3Ctext x='32' y='41' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='24' text-anchor='middle' fill='%231E1A16'%3E%26amp;%3C/text%3E%3C/svg%3E">
-<title>Menú del Recreo M&amp;M</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: mostrador de kiosco. Una columna en el celular, rejilla de 2 a 3 en pantallas grandes.
-   Los precios van como las etiquetas amarillas pegadas en el cartel del kiosko. */
 :root {
-  --paper: #FAF8F4;
-  --surface: #FFFFFF;
-  --ink: #1E1A16;
-  --muted: #675D53;
-  --line: #E7E0D6;
-  --red: #C7362B;
-  --red-deep: #A82A21;
-  --on-red: #FFFFFF;
-  --sticker: #FFC83A;
-  --on-sticker: #1E1A16;
-  --leaf: #2C7546;
-  --shadow: 0 1px 2px rgba(40, 24, 10, .08), 0 8px 24px rgba(40, 24, 10, .07);
-  --font-display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
-  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --r: 18px;
+  --rojo: #C7362B;
+  --rojo-hondo: #9E2A21;
+  --amarillo: #FFC83A;
+  --tinta: #1E1A16;
+  --gris: #5E554C;
+  --linea: #E5DFD7;
+  --fondo: #FFFFFF;
+  --fondo-2: #F5F3F0;
+  --display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --texto: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ancho: 1120px;
+  --lado: clamp(18px, 4.5vw, 40px);
+  --colgado: clamp(56px, 10vw, 110px);
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #14110E;
-    --surface: #1F1A16;
-    --ink: #F4EFE8;
-    --muted: #B9AEA1;
-    --line: #342D26;
-    --red: #D9493A;
-    --red-deep: #B93A2D;
-    --on-red: #FFFFFF;
-    --sticker: #FFC83A;
-    --on-sticker: #1E1A16;
-    --leaf: #74C28F;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px rgba(0, 0, 0, .35);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #14110E;
-  --surface: #1F1A16;
-  --ink: #F4EFE8;
-  --muted: #B9AEA1;
-  --line: #342D26;
-  --red: #D9493A;
-  --red-deep: #B93A2D;
-  --on-red: #FFFFFF;
-  --sticker: #FFC83A;
-  --on-sticker: #1E1A16;
-  --leaf: #74C28F;
-  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px rgba(0, 0, 0, .35);
-  color-scheme: dark;
-}
-
 * { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-.wrap { width: 100%; max-width: 1080px; margin-inline: auto; padding-inline: 18px; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--fondo); color: var(--tinta); font-family: var(--texto); font-size: 16.5px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.marco { width: 100%; max-width: var(--ancho); margin-inline: auto; padding-inline: var(--lado); }
+:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 3px; border-radius: 4px; }
 
-/* ---------- Cabecera ---------- */
-.top {
-  background: var(--red);
-  color: var(--on-red);
-  padding-block: 28px 30px;
-  position: relative;
-  overflow: hidden;
+/* ---------- Logo ---------- */
+.marca { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.mm { font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1; letter-spacing: -0.02em; display: inline-flex; align-items: center; }
+.mm .y { display: inline-grid; place-items: center; width: 1.42em; height: 1.42em; margin-inline: 0.12em; border-radius: 50%; background: var(--amarillo); color: var(--tinta); font-size: 0.6em; line-height: 1; transform: rotate(-8deg); }
+.marca-txt { font-size: 13px; line-height: 1.3; }
+.marca-txt b { display: block; font-weight: 700; font-size: 12.5px; letter-spacing: 0.06em; }
+
+/* ---------- Portada (el toldo del kiosco) ---------- */
+.toldo { display: flow-root; background: var(--rojo); color: #fff; padding-block: 22px 0; }
+.toldo-arriba { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+@media (max-width: 479px) { .gestion { display: none; } }
+.gestion { font-size: 13px; font-weight: 700; padding: 7px 13px; border: 1.5px solid rgba(255,255,255,.7); border-radius: 999px; white-space: nowrap; }
+.para { display: none; margin: 34px 0 0; background: var(--amarillo); color: var(--tinta); border-radius: 10px; padding: 12px 16px; max-width: 560px; box-shadow: 0 2px 0 rgba(0,0,0,.15); }
+.para.si { display: block; }
+.para strong { display: block; font-family: var(--display); font-weight: 800; font-size: 19px; line-height: 1.2; letter-spacing: -0.01em; }
+.para span { display: block; font-size: 15px; margin-top: 3px; }
+.para span:empty { display: none; }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(50px, 13.5vw, 112px); line-height: 0.93; letter-spacing: -0.035em; margin: 36px 0 0; max-width: 9.5ch; }
+.para.si + h1 { margin-top: 26px; }
+.bajada { font-size: clamp(17px, 2.4vw, 20px); line-height: 1.5; max-width: 34em; margin: 20px 0 0; }
+.botones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.boton { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 13px 22px; border-radius: 999px; font: inherit; font-weight: 700; font-size: 16.5px; text-decoration: none; cursor: pointer; border: 0; }
+.boton-amarillo { background: var(--amarillo); color: var(--tinta); }
+.boton-amarillo:hover { background: #FFD45E; }
+.boton-borde { color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.85); }
+.boton-borde:hover { background: rgba(255,255,255,.12); }
+.boton-tinta { background: var(--tinta); color: #fff; }
+.boton-tinta:hover { background: #3A332C; }
+.flecos { height: 18px; background: radial-gradient(circle at 13px 0, var(--rojo) 13px, transparent 13.5px) 0 0 / 26px 18px repeat-x; }
+
+/* Fotos colgadas del toldo */
+.vitrina { max-width: 900px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 2.4vw, 22px); margin-top: 30px; margin-bottom: calc(-1 * var(--colgado)); position: relative; z-index: 1; }
+.polaroid { margin: 0; background: #fff; padding: clamp(5px, 1vw, 9px); padding-bottom: 0; box-shadow: 0 2px 4px rgba(30,26,22,.12), 0 16px 34px rgba(30,26,22,.20); }
+.polaroid img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+.polaroid figcaption { font-family: var(--display); font-weight: 800; font-size: clamp(12.5px, 2.6vw, 18px); line-height: 1.15; padding: clamp(8px, 1.5vw, 12px) 2px clamp(9px, 1.6vw, 13px); color: var(--tinta); }
+@media (prefers-reduced-motion: no-preference) {
+  .polaroid { animation: colgar .7s cubic-bezier(.2,.8,.25,1) both; }
+  .polaroid:nth-child(2) { animation-delay: .08s; }
+  .polaroid:nth-child(3) { animation-delay: .16s; }
+  @keyframes colgar { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: none; } }
 }
-.top::after {
-  /* borde de toldo de kiosko */
-  content: "";
-  position: absolute; left: 0; right: 0; bottom: 0; height: 12px;
-  background: radial-gradient(circle at 12px -2px, transparent 12px, var(--paper) 12.5px) 0 0 / 24px 12px repeat-x;
-}
-.brand { display: flex; align-items: center; gap: 14px; }
-.mark {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 44px;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  font-variation-settings: "opsz" 96;
-}
-.mark .amp {
-  display: inline-grid; place-items: center;
-  width: .9em; height: .9em; margin-inline: .04em;
-  border-radius: 50%;
-  background: var(--sticker); color: var(--on-sticker);
-  font-size: .62em; vertical-align: .18em;
-  transform: rotate(-8deg);
-}
-.brand-sub { font-size: 13px; line-height: 1.3; letter-spacing: .02em; opacity: .92; }
-.brand-sub b { display: block; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 11.5px; }
-.top h1 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(38px, 9vw, 64px);
-  line-height: .98;
-  letter-spacing: -0.025em;
-  margin: 22px 0 10px;
-  text-wrap: balance;
-}
-.lede { margin: 0; max-width: 34ch; font-size: 17.5px; opacity: .95; }
-.chips { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.chips a, .chips span {
-  display: inline-block; padding: 7px 13px; border-radius: 999px;
-  font-size: 14px; font-weight: 600; text-decoration: none;
-  color: var(--on-red); border: 1.5px solid rgba(255, 255, 255, .55);
-}
-.chips a:hover { background: rgba(255, 255, 255, .14); }
-.chips a:focus-visible, .btn:focus-visible, .copy:focus-visible { outline: 3px solid var(--sticker); outline-offset: 2px; }
+.antes-flecos { padding-bottom: 0; }
+.bajo-toldo { padding-top: calc(var(--colgado) - 18px); }
+
+/* ---------- Datos clave ---------- */
+.datos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding-block: 36px 0; }
+.dato { border-top: 2px solid var(--tinta); padding-top: 12px; }
+.dato h3 { font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -0.01em; margin: 0; }
+.dato p { margin: 4px 0 0; color: var(--gris); font-size: 15px; }
+@media (max-width: 720px) { .datos { grid-template-columns: 1fr; gap: 18px; } }
 
 /* ---------- Secciones ---------- */
-main { padding-block: 34px 10px; }
-section { padding-block: 10px 34px; }
-.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
-h2 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(27px, 6vw, 36px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin: 0;
-  text-wrap: balance;
-}
-.note { color: var(--muted); font-size: 14px; margin: 0; }
+.seccion { padding-block: clamp(56px, 8vw, 96px) 0; }
+.cabeza { max-width: 640px; margin-bottom: 28px; }
+h2 { font-family: var(--display); font-weight: 800; font-size: clamp(32px, 6.6vw, 50px); line-height: 1; letter-spacing: -0.03em; margin: 0; text-wrap: balance; }
+.cabeza p { margin: 12px 0 0; color: var(--gris); font-size: 17px; }
 
-/* ---------- Tarjetas de producto ---------- */
-.grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
-@media (min-width: 600px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 940px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.card {
-  background: var(--surface);
-  border-radius: var(--r);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  display: flex; flex-direction: column;
-  min-width: 0;
-}
-.photo { position: relative; margin: 0; aspect-ratio: 1 / 1; max-width: 100%; background: #2a2119; }
-.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.tag {
-  position: absolute; left: 14px; bottom: 14px;
-  background: var(--sticker); color: var(--on-sticker);
-  font-family: var(--font-display); font-weight: 800;
-  font-size: 26px; line-height: 1; letter-spacing: -0.01em;
-  padding: 9px 13px 8px; border-radius: 6px;
-  transform: rotate(-4deg);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, .18), 0 6px 14px rgba(0, 0, 0, .25);
-  font-variant-numeric: tabular-nums;
-}
-.tag small { font-size: .58em; font-weight: 700; margin-right: 3px; }
-.tag .pre { display: block; font-family: var(--font-body); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 3px; }
-.card-body { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 6px; }
-.card h3 { font-family: var(--font-display); font-weight: 800; font-size: 23px; line-height: 1.1; letter-spacing: -0.015em; margin: 0; }
-.card p { margin: 0; color: var(--muted); font-size: 15.5px; }
-.vars { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; padding: 0; list-style: none; }
-.vars li {
-  font-size: 13.5px; font-weight: 600; padding: 4px 10px; border-radius: 999px;
-  border: 1.5px solid var(--line); color: var(--ink); font-variant-numeric: tabular-nums;
-}
+/* Productos */
+.productos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px clamp(12px, 2.4vw, 24px); }
+@media (min-width: 900px) { .productos { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.producto .foto { position: relative; border-radius: 12px; overflow: hidden; background: #2A2119; aspect-ratio: 1 / 1; }
+.producto .foto img { width: 100%; height: 100%; object-fit: cover; }
+.precio { position: absolute; left: 10px; bottom: 10px; background: var(--amarillo); color: var(--tinta); font-family: var(--display); font-weight: 800; font-size: clamp(20px, 4.6vw, 25px); line-height: 1; padding: 7px 10px 6px; border-radius: 7px; box-shadow: 0 2px 0 rgba(0,0,0,.18), 0 6px 14px rgba(0,0,0,.22); font-variant-numeric: tabular-nums; }
+.precio small { font-size: .56em; font-weight: 700; margin-right: 3px; }
+.producto h3 { font-family: var(--display); font-weight: 800; font-size: clamp(17px, 3.6vw, 20px); line-height: 1.15; letter-spacing: -0.01em; margin: 12px 0 0; }
+.producto p { margin: 3px 0 0; color: var(--gris); font-size: 14.5px; line-height: 1.4; }
 
-/* ---------- Lista de precios ---------- */
-.prices { display: grid; grid-template-columns: 1fr; gap: 18px; }
-@media (min-width: 680px) { .prices { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 980px) { .prices { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.plist { background: var(--surface); border-radius: var(--r); box-shadow: var(--shadow); padding: 18px 20px 12px; min-width: 0; }
-.plist h3 {
-  margin: 0 0 8px; font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--red);
-}
-.plist ul { list-style: none; margin: 0; padding: 0; }
-.plist li {
-  display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 8px;
-  padding-block: 9px; border-bottom: 1px solid var(--line); font-size: 16px;
-}
-.plist li:last-child { border-bottom: 0; }
-.plist li::after { content: none; }
-.plist .dots { border-bottom: 2px dotted var(--line); transform: translateY(-4px); min-width: 12px; }
-.plist .pr { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.plist .sub { display: block; font-size: 13px; color: var(--muted); }
+/* Precios */
+.banda { background: var(--fondo-2); margin-top: clamp(56px, 8vw, 96px); padding-bottom: clamp(48px, 7vw, 80px); }
+.banda .seccion { padding-top: clamp(48px, 7vw, 80px); }
+.listas { display: grid; grid-template-columns: 1fr; gap: 30px 40px; }
+@media (min-width: 700px) { .listas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .listas { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.lista h3 { font-family: var(--display); font-weight: 800; font-size: 20px; letter-spacing: -0.01em; color: var(--rojo-hondo); margin: 0; padding-bottom: 8px; border-bottom: 2px solid var(--tinta); }
+.lista ul { list-style: none; margin: 0; padding: 0; }
+.lista li { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--linea); }
+.lista li:last-child { border-bottom: 0; }
+.lista .bs { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tambien { margin: 34px 0 0; max-width: 46em; color: var(--gris); }
+.tambien strong { color: var(--tinta); }
 
-/* ---------- También ---------- */
-.extras { display: grid; grid-template-columns: 1fr; gap: 14px; }
-@media (min-width: 760px) { .extras { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.extra { border: 1.5px solid var(--line); border-radius: var(--r); padding: 16px 18px; min-width: 0; }
-.extra h3 { margin: 0 0 4px; font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.01em; }
-.extra p { margin: 0; color: var(--muted); font-size: 15px; }
+/* Cómo trabajamos */
+.dos { display: grid; grid-template-columns: 1fr; gap: 36px 56px; }
+@media (min-width: 860px) { .dos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.bloque h3 { font-family: var(--display); font-weight: 800; font-size: 21px; letter-spacing: -0.01em; margin: 0; padding-bottom: 8px; border-bottom: 2px solid var(--tinta); }
+.bloque dl { margin: 0; }
+.bloque dl div { padding: 14px 0; border-bottom: 1px solid var(--linea); }
+.bloque dl div:last-child { border-bottom: 0; }
+.bloque dt { font-weight: 700; }
+.bloque dd { margin: 3px 0 0; color: var(--gris); }
+.respaldos { margin-top: 36px; background: var(--fondo-2); border-radius: 12px; padding: 20px 22px; }
+.respaldos h3 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 19px; }
+.respaldos ul { margin: 10px 0 0; padding-left: 20px; }
+.respaldos li { margin: 4px 0; }
+.respaldos p { margin: 10px 0 0; color: var(--gris); font-size: 15px; }
 
-/* ---------- Contacto ---------- */
-.contact {
-  background: var(--ink); color: var(--paper);
-  border-radius: var(--r); padding: 24px 22px;
-  display: grid; gap: 18px;
-}
-@media (min-width: 760px) { .contact { grid-template-columns: 1.1fr 1fr; align-items: center; padding: 30px 32px; } }
-.contact h2 { color: var(--paper); }
-.contact p { margin: 8px 0 0; opacity: .85; max-width: 42ch; }
-.lines { display: grid; gap: 10px; min-width: 0; }
-.line {
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  padding: 12px 14px; border-radius: 12px; border: 1.5px solid color-mix(in srgb, var(--paper) 24%, transparent);
-  min-width: 0;
-}
-.line .lbl { display: block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .7; font-weight: 700; }
-.line .val { font-weight: 700; font-size: 17px; overflow-wrap: anywhere; user-select: all; font-variant-numeric: tabular-nums; }
-.copy {
-  flex: none; font: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
-  padding: 7px 12px; border-radius: 999px; border: 0;
-  background: var(--paper); color: var(--ink);
-}
-.btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 12px 18px; border-radius: 999px; text-decoration: none;
-  background: var(--sticker); color: var(--on-sticker); font-weight: 800;
-  font-variant-numeric: tabular-nums;
-}
-.btn:hover { filter: brightness(1.04); }
-.more { margin: 22px 0 0; font-size: 16px; }
-.more a { color: var(--red); font-weight: 700; text-underline-offset: 3px; }
+/* Trayectoria */
+.historia { display: grid; grid-template-columns: 1fr; gap: 36px 56px; align-items: start; }
+@media (min-width: 900px) { .historia { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); } }
+.linea-tiempo { list-style: none; margin: 0; padding: 0; }
+.linea-tiempo li { display: grid; grid-template-columns: 98px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--linea); }
+.linea-tiempo .anio { font-weight: 700; color: var(--rojo-hondo); font-variant-numeric: tabular-nums; }
+.linea-tiempo .hoy { background: var(--amarillo); border-bottom: 0; border-radius: 8px; padding: 12px 10px; margin-top: 10px; grid-template-columns: 88px 1fr; font-weight: 600; }
+.linea-tiempo .hoy .anio { color: var(--tinta); font-weight: 800; }
+.cita { margin: 0; background: var(--fondo-2); border-radius: 12px; padding: 24px 24px 22px; }
+.cita h3 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 21px; letter-spacing: -0.01em; }
+.cita blockquote { margin: 12px 0 0; font-size: 17px; line-height: 1.55; }
+.cita figcaption { margin-top: 12px; color: var(--gris); font-size: 14.5px; }
+.formacion { margin-top: 20px; border: 1.5px solid var(--linea); border-radius: 12px; padding: 20px 24px; }
+.formacion h3 { margin: 0 0 6px; font-family: var(--display); font-weight: 800; font-size: 19px; }
+.formacion ul { list-style: none; margin: 0; padding: 0; }
+.formacion li { padding: 8px 0; border-bottom: 1px solid var(--linea); font-size: 15px; }
+.formacion li:last-child { border-bottom: 0; }
+.formacion li span { display: block; color: var(--gris); font-size: 14px; }
 
-footer { padding-block: 26px 40px; color: var(--muted); font-size: 13.5px; }
+/* Cierre */
+.cierre { background: var(--rojo); color: #fff; margin-top: clamp(64px, 9vw, 110px); padding-bottom: 56px; }
+.cierre .flecos-arriba { height: 18px; background: radial-gradient(circle at 13px 18px, var(--rojo) 13px, var(--fondo) 13.5px) 0 0 / 26px 18px repeat-x; }
+.cierre-dentro { display: grid; grid-template-columns: 1fr; gap: 30px 56px; padding-top: 44px; }
+@media (min-width: 860px) { .cierre-dentro { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: end; } }
+.cierre h2 { color: #fff; }
+.cierre p { margin: 14px 0 0; font-size: 18px; max-width: 30em; }
+.contactos { display: grid; gap: 10px; }
+.contacto { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: rgba(255,255,255,.12); border-radius: 12px; padding: 12px 14px 12px 16px; }
+.contacto .que { font-size: 13px; font-weight: 600; opacity: .9; }
+.contacto .num { display: block; font-weight: 700; font-size: 19px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.contacto a.num { text-decoration: none; }
+.copiar { flex: none; min-height: 40px; padding: 8px 14px; border-radius: 999px; border: 0; background: #fff; color: var(--tinta); font: inherit; font-weight: 700; font-size: 14px; cursor: pointer; }
+
+footer { padding-block: 30px 40px; color: var(--gris); font-size: 14.5px; }
 footer p { margin: 0 0 6px; max-width: 70ch; }
+footer a { color: var(--rojo-hondo); font-weight: 700; text-underline-offset: 3px; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .card { transition: transform .2s ease; }
-  .card:hover { transform: translateY(-3px); }
-}
+/* Barra fija en el celular */
+.barra { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; display: flex; gap: 10px; padding: 10px var(--lado) calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96); box-shadow: 0 -6px 20px rgba(30,26,22,.12); transform: translateY(110%); transition: transform .25s ease; }
+.barra.ver { transform: none; }
+.barra .boton { flex: 1; min-height: 48px; padding: 10px 14px; font-size: 15.5px; }
+@media (min-width: 760px) { .barra { display: none; } }
+@media (max-width: 759px) { footer { padding-bottom: 96px; } }
+@media (prefers-reduced-motion: reduce) { .barra { transition: none; } }
 </style>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
-
-<header class="top">
-  <div class="wrap">
-    <div class="brand">
-      <span class="mark" aria-label="M y M">M<span class="amp">&amp;</span>M</span>
-      <span class="brand-sub"><b>Servicios Gastronómicos</b>Mejores Momentos · Santa Cruz</span>
+<header class="toldo">
+  <div class="marco">
+    <div class="toldo-arriba">
+      <a class="marca" href="/" aria-label="Servicios Gastronómicos M&amp;M, Mejores Momentos">
+        <span class="mm" aria-hidden="true">M<span class="y">&amp;</span>M</span>
+        <span class="marca-txt"><b>SERVICIOS GASTRONÓMICOS</b>Mejores Momentos</span>
+      </a>
+      <span class="gestion">Gestión 2027</span>
     </div>
-    <h1>Menú del recreo</h1>
-    <p class="lede">Fotos reales de lo que servimos en nuestro kiosco escolar, con los precios de 2026.</p>
-    <ul class="chips" aria-label="Ir a">
-      <li><a href="#fotos">Productos</a></li>
-      <li><a href="#precios">Precios</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-      <li><span>Desde 1991 en colegios</span></li>
-    </ul>
+    <div class="para" id="para"><strong id="para-nombre"></strong><span id="para-nota"></span></div>
+    <h1>Mejores momentos en el recreo.</h1>
+    <p class="bajada">Atendemos kioscos y comedores de colegios en Santa Cruz desde 1991. Aquí puede ver lo que servimos, nuestros precios y cómo trabajaríamos en su institución.</p>
+    <div class="botones" id="botones-portada">
+      <a class="boton boton-amarillo js-pdf" href="/propuesta/servicios-mym-2027.pdf" download="Propuesta Servicios MyM 2027.pdf"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Descargar la propuesta (PDF)</a>
+      <a class="boton boton-borde js-wa" href="https://wa.me/59170985627?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20la%20propuesta%20de%20Servicios%20M%26M" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5Z"/></svg>Escribir por WhatsApp</a>
+    </div>
+    <div class="vitrina">
+      <figure class="polaroid"><img src="fotos/hamburguesa-640.webp" width="640" height="640" alt="Hamburguesa con lechuga y papas en pan con sésamo" fetchpriority="high"><figcaption>Hamburguesa</figcaption></figure>
+      <figure class="polaroid"><img src="fotos/saltena-640.webp" width="640" height="640" alt="Salteña horneada" fetchpriority="high"><figcaption>Salteña</figcaption></figure>
+      <figure class="polaroid"><img src="fotos/croissant-640.webp" width="640" height="640" alt="Croissant relleno de crema y frutillas" fetchpriority="high"><figcaption>Croissant con frutilla</figcaption></figure>
+    </div>
   </div>
 </header>
+<div class="flecos" aria-hidden="true"></div>
 
-<main class="wrap">
-
-  <section id="fotos" aria-labelledby="h-fotos">
-    <div class="sec-head">
-      <h2 id="h-fotos">Así se ven nuestros productos</h2>
-      <p class="note">Precios en bolivianos (Bs)</p>
+<main>
+  <div class="marco bajo-toldo">
+    <div class="datos">
+      <div class="dato"><h3>Desde 1991</h3><p>35 años en kioscos y comedores de colegios y universidades de Santa Cruz.</p></div>
+      <div class="dato"><h3>Respaldo EMBOL</h3><p>Certificado de referencia de EMBOL S.A. (Coca-Cola).</p></div>
+      <div class="dato"><h3>Cocina propia</h3><p>Pollo, hamburguesas y milanesas preparados cada día.</p></div>
     </div>
-    <div class="grid">
+  </div>
 
-      <article class="card">
-        <figure class="photo">
-          <img src="fotos/empanada.webp" srcset="fotos/empanada-640.webp 640w, fotos/empanada.webp 900w" sizes="(min-width: 940px) 340px, (min-width: 600px) 46vw, 100vw" width="900" height="900" alt="Empanada de choclo horneada en forma de media luna, con queso y orégano por encima, en un plato negro">
-          <span class="tag"><small>Bs</small>8</span>
-        </figure>
-        <div class="card-body">
-          <h3>Empanada de choclo</h3>
-          <p>Rellena de queso, jamón y choclo, con queso y orégano por encima.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <figure class="photo">
-          <img src="fotos/arabe.webp" srcset="fotos/arabe-640.webp 640w, fotos/arabe.webp 900w" sizes="(min-width: 940px) 340px, (min-width: 600px) 46vw, 100vw" width="900" height="900" alt="Árabe horneado en forma de triángulo, con queso y orégano, en un plato negro">
-          <span class="tag"><small>Bs</small>7</span>
-        </figure>
-        <div class="card-body">
-          <h3>Árabe</h3>
-          <p>Masa horneada en triángulo, rellena de queso y jamón.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <figure class="photo">
-          <img src="fotos/saltena.webp" srcset="fotos/saltena-640.webp 640w, fotos/saltena.webp 900w" sizes="(min-width: 940px) 340px, (min-width: 600px) 46vw, 100vw" width="900" height="900" alt="Salteña horneada con su repulgue dorado, sobre un plato negro" loading="lazy">
-          <span class="tag"><small>Bs</small>7</span>
-        </figure>
-        <div class="card-body">
-          <h3>Salteña</h3>
-          <p>La infaltable de media mañana.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <figure class="photo">
-          <img src="fotos/pollo.webp" srcset="fotos/pollo-640.webp 640w, fotos/pollo.webp 900w" sizes="(min-width: 940px) 340px, (min-width: 600px) 46vw, 100vw" width="900" height="900" alt="Presa grande de pollo frito apanado sobre papas fritas, en un plato negro" loading="lazy">
-          <span class="tag"><small>Bs</small>10</span>
-        </figure>
-        <div class="card-body">
-          <h3>Pollo con papas</h3>
-          <p>Presa de pollo frito bien crocante, con papas fritas.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <figure class="photo">
-          <img src="fotos/nuggets.webp" srcset="fotos/nuggets-640.webp 640w, fotos/nuggets.webp 900w" sizes="(min-width: 940px) 340px, (min-width: 600px) 46vw, 100vw" width="900" height="900" alt="Tres nuggets de pollo apanados sobre papas fritas, en un plato negro" loading="lazy">
-          <span class="tag"><small>Bs</small>10</span>
-        </figure>
-        <div class="card-body">
-          <h3>Nuggets con papas</h3>
-          <p>Nuggets de pollo apanados, con papas fritas.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <figure class="photo">
-          <img src="fotos/hamburguesa.webp" srcset="fotos/hamburguesa-640.webp 640w, fotos/hamburguesa.webp 900w" sizes="(min-width: 940px) 340px, (min-width: 600px) 46vw, 100vw" width="900" height="900" alt="Hamburguesa en pan con sésamo, con lechuga y papas fritas dentro del pan" loading="lazy">
-          <span class="tag"><small>Bs</small>10</span>
-        </figure>
-        <div class="card-body">
-          <h3>Hamburguesa</h3>
-          <p>En pan con sésamo, con lechuga y papas fritas adentro.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <figure class="photo">
-          <img src="fotos/milanesa.webp" srcset="fotos/milanesa-640.webp 640w, fotos/milanesa.webp 900w" sizes="(min-width: 940px) 340px, (min-width: 600px) 46vw, 100vw" width="900" height="900" alt="Sándwich de milanesa apanada con lechuga en pan" loading="lazy">
-          <span class="tag"><small>Bs</small>8</span>
-        </figure>
-        <div class="card-body">
-          <h3>Milanesa en pan</h3>
-          <p>Milanesa crocante con lechuga fresca, en pan suave.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <figure class="photo">
-          <img src="fotos/croissant.webp" srcset="fotos/croissant-640.webp 640w, fotos/croissant.webp 900w" sizes="(min-width: 940px) 340px, (min-width: 600px) 46vw, 100vw" width="900" height="900" alt="Croissant relleno de crema y frutillas, con hilos de chocolate" loading="lazy">
-          <span class="tag"><small>Bs</small>10</span>
-        </figure>
-        <div class="card-body">
-          <h3>Croissant con frutilla</h3>
-          <p>Relleno de crema y frutillas, con hilos de chocolate.</p>
-        </div>
-      </article>
-
+  <section class="seccion marco" id="productos" aria-labelledby="t-productos">
+    <div class="cabeza">
+      <h2 id="t-productos">Lo que servimos</h2>
+      <p>Fotos reales de nuestro kiosco, con el precio de cada producto en bolivianos.</p>
     </div>
-    <p class="more"><a href="https://drive.google.com/drive/folders/10JVXXFyH3jNBYnMkzdeuQmtNjzl0lcwW?usp=sharing" target="_blank" rel="noopener">Ver más fotos en nuestro Google Drive →</a></p>
+    <ul class="productos">
+      <li class="producto">
+        <div class="foto">
+          <img src="fotos/empanada-640.webp" srcset="fotos/empanada-640.webp 640w, fotos/empanada.webp 900w" sizes="(min-width: 1120px) 250px, (min-width: 900px) 22vw, 46vw" width="640" height="640" alt="Empanada de choclo horneada con queso y orégano, en un plato negro" loading="lazy" decoding="async">
+          <span class="precio"><small>Bs</small>8</span>
+        </div>
+        <h3>Empanada de choclo</h3>
+        <p>Rellena de queso, jamón y choclo.</p>
+      </li>
+      <li class="producto">
+        <div class="foto">
+          <img src="fotos/arabe-640.webp" srcset="fotos/arabe-640.webp 640w, fotos/arabe.webp 900w" sizes="(min-width: 1120px) 250px, (min-width: 900px) 22vw, 46vw" width="640" height="640" alt="Árabe horneado en forma de triángulo, en un plato negro" loading="lazy" decoding="async">
+          <span class="precio"><small>Bs</small>7</span>
+        </div>
+        <h3>Árabe</h3>
+        <p>Masa horneada, rellena de queso y jamón.</p>
+      </li>
+      <li class="producto">
+        <div class="foto">
+          <img src="fotos/saltena-640.webp" srcset="fotos/saltena-640.webp 640w, fotos/saltena.webp 900w" sizes="(min-width: 1120px) 250px, (min-width: 900px) 22vw, 46vw" width="640" height="640" alt="Salteña horneada con su repulgue dorado" loading="lazy" decoding="async">
+          <span class="precio"><small>Bs</small>7</span>
+        </div>
+        <h3>Salteña</h3>
+        <p>La infaltable de media mañana.</p>
+      </li>
+      <li class="producto">
+        <div class="foto">
+          <img src="fotos/pollo-640.webp" srcset="fotos/pollo-640.webp 640w, fotos/pollo.webp 900w" sizes="(min-width: 1120px) 250px, (min-width: 900px) 22vw, 46vw" width="640" height="640" alt="Presa de pollo frito apanado sobre papas fritas" loading="lazy" decoding="async">
+          <span class="precio"><small>Bs</small>10</span>
+        </div>
+        <h3>Pollo con papas</h3>
+        <p>Presa crocante con papas fritas.</p>
+      </li>
+      <li class="producto">
+        <div class="foto">
+          <img src="fotos/nuggets-640.webp" srcset="fotos/nuggets-640.webp 640w, fotos/nuggets.webp 900w" sizes="(min-width: 1120px) 250px, (min-width: 900px) 22vw, 46vw" width="640" height="640" alt="Nuggets de pollo apanados sobre papas fritas" loading="lazy" decoding="async">
+          <span class="precio"><small>Bs</small>10</span>
+        </div>
+        <h3>Nuggets con papas</h3>
+        <p>Nuggets de pollo con papas fritas.</p>
+      </li>
+      <li class="producto">
+        <div class="foto">
+          <img src="fotos/hamburguesa-640.webp" srcset="fotos/hamburguesa-640.webp 640w, fotos/hamburguesa.webp 900w" sizes="(min-width: 1120px) 250px, (min-width: 900px) 22vw, 46vw" width="640" height="640" alt="Hamburguesa en pan con sésamo, con lechuga y papas fritas" loading="lazy" decoding="async">
+          <span class="precio"><small>Bs</small>10</span>
+        </div>
+        <h3>Hamburguesa</h3>
+        <p>Pan con sésamo, lechuga y papas.</p>
+      </li>
+      <li class="producto">
+        <div class="foto">
+          <img src="fotos/milanesa-640.webp" srcset="fotos/milanesa-640.webp 640w, fotos/milanesa.webp 900w" sizes="(min-width: 1120px) 250px, (min-width: 900px) 22vw, 46vw" width="640" height="640" alt="Sándwich de milanesa apanada con lechuga" loading="lazy" decoding="async">
+          <span class="precio"><small>Bs</small>8</span>
+        </div>
+        <h3>Milanesa en pan</h3>
+        <p>Milanesa crocante con lechuga.</p>
+      </li>
+      <li class="producto">
+        <div class="foto">
+          <img src="fotos/croissant-640.webp" srcset="fotos/croissant-640.webp 640w, fotos/croissant.webp 900w" sizes="(min-width: 1120px) 250px, (min-width: 900px) 22vw, 46vw" width="640" height="640" alt="Croissant relleno de crema y frutillas, con hilos de chocolate" loading="lazy" decoding="async">
+          <span class="precio"><small>Bs</small>10</span>
+        </div>
+        <h3>Croissant con frutilla</h3>
+        <p>Crema, frutillas y chocolate.</p>
+      </li>
+    </ul>
   </section>
 
-  <section id="precios" aria-labelledby="h-precios">
-    <div class="sec-head">
-      <h2 id="h-precios">Lista de precios 2026</h2>
-      <p class="note">Vigente en nuestro kiosco escolar, octubre de 2026</p>
-    </div>
-    <div class="prices">
-      <div class="plist">
+  <div class="banda">
+    <section class="seccion marco" id="precios" aria-labelledby="t-precios">
+      <div class="cabeza">
+        <h2 id="t-precios">Lista de precios</h2>
+        <p>Precios de octubre de 2026 en nuestro kiosco, en bolivianos. En su colegio, la lista final se acuerda con la administración.</p>
+      </div>
+      <div class="listas">
+      <div class="lista">
         <h3>Platos y sándwiches</h3>
         <ul>
-          <li><span>Pollo con papas</span><span class="dots"></span><span class="pr">Bs 10</span></li>
-          <li><span>Nuggets con papas</span><span class="dots"></span><span class="pr">Bs 10</span></li>
-          <li><span>Salchipapa</span><span class="dots"></span><span class="pr">Bs 5</span></li>
-          <li><span>Hamburguesa</span><span class="dots"></span><span class="pr">Bs 10</span></li>
-          <li><span>Lomito</span><span class="dots"></span><span class="pr">Bs 10</span></li>
-          <li><span>Milanesa</span><span class="dots"></span><span class="pr">Bs 8</span></li>
-          <li><span>Choripán</span><span class="dots"></span><span class="pr">Bs 8</span></li>
-          <li><span>Panchito</span><span class="dots"></span><span class="pr">Bs 4</span></li>
-          <li><span>Sándwich de miga</span><span class="dots"></span><span class="pr">Bs 8</span></li>
-          <li><span>Tostada</span><span class="dots"></span><span class="pr">Bs 5</span></li>
+          <li><span>Pollo con papas</span><span class="bs">Bs 10</span></li>
+          <li><span>Nuggets con papas</span><span class="bs">Bs 10</span></li>
+          <li><span>Salchipapa</span><span class="bs">Bs 5</span></li>
+          <li><span>Hamburguesa</span><span class="bs">Bs 10</span></li>
+          <li><span>Lomito</span><span class="bs">Bs 10</span></li>
+          <li><span>Milanesa</span><span class="bs">Bs 8</span></li>
+          <li><span>Choripán</span><span class="bs">Bs 8</span></li>
+          <li><span>Panchito</span><span class="bs">Bs 4</span></li>
+          <li><span>Sándwich de miga</span><span class="bs">Bs 8</span></li>
+          <li><span>Tostada</span><span class="bs">Bs 5</span></li>
         </ul>
       </div>
-      <div class="plist">
+      <div class="lista">
         <h3>Salteñas y horneados</h3>
         <ul>
-          <li><span>Salteña</span><span class="dots"></span><span class="pr">Bs 7</span></li>
-          <li><span>Empanada de choclo</span><span class="dots"></span><span class="pr">Bs 8</span></li>
-          <li><span>Empanada de carne o pollo</span><span class="dots"></span><span class="pr">Bs 7</span></li>
-          <li><span>Empanada de queso</span><span class="dots"></span><span class="pr">Bs 5</span></li>
-          <li><span>Árabe</span><span class="dots"></span><span class="pr">Bs 7</span></li>
-          <li><span>Asadito</span><span class="dots"></span><span class="pr">Bs 6</span></li>
-          <li><span>Arepa</span><span class="dots"></span><span class="pr">Bs 5</span></li>
-          <li><span>Pizza</span><span class="dots"></span><span class="pr">Bs 5</span></li>
+          <li><span>Salteña</span><span class="bs">Bs 7</span></li>
+          <li><span>Empanada de choclo</span><span class="bs">Bs 8</span></li>
+          <li><span>Empanada de carne o pollo</span><span class="bs">Bs 7</span></li>
+          <li><span>Empanada de queso</span><span class="bs">Bs 5</span></li>
+          <li><span>Árabe</span><span class="bs">Bs 7</span></li>
+          <li><span>Asadito</span><span class="bs">Bs 6</span></li>
+          <li><span>Arepa</span><span class="bs">Bs 5</span></li>
+          <li><span>Pizza</span><span class="bs">Bs 5</span></li>
         </ul>
       </div>
-      <div class="plist">
+      <div class="lista">
         <h3>Panadería y dulces</h3>
         <ul>
-          <li><span>Pan de arroz</span><span class="dots"></span><span class="pr">Bs 5</span></li>
-          <li><span>Croissant de queso y mortadela</span><span class="dots"></span><span class="pr">Bs 9</span></li>
-          <li><span>Croissant con frutilla</span><span class="dots"></span><span class="pr">Bs 10</span></li>
-          <li><span>Bombita</span><span class="dots"></span><span class="pr">Bs 5</span></li>
-          <li><span>Dona</span><span class="dots"></span><span class="pr">Bs 5</span></li>
-          <li><span>Brownie</span><span class="dots"></span><span class="pr">Bs 8</span></li>
-          <li><span>Pie de limón</span><span class="dots"></span><span class="pr">Bs 7</span></li>
-          <li><span>Torta</span><span class="dots"></span><span class="pr">Bs 10</span></li>
-          <li><span>Tarta</span><span class="dots"></span><span class="pr">Bs 10</span></li>
+          <li><span>Pan de arroz</span><span class="bs">Bs 5</span></li>
+          <li><span>Croissant de queso y mortadela</span><span class="bs">Bs 9</span></li>
+          <li><span>Croissant con frutilla</span><span class="bs">Bs 10</span></li>
+          <li><span>Bombita</span><span class="bs">Bs 5</span></li>
+          <li><span>Dona</span><span class="bs">Bs 5</span></li>
+          <li><span>Brownie</span><span class="bs">Bs 8</span></li>
+          <li><span>Pie de limón</span><span class="bs">Bs 7</span></li>
+          <li><span>Torta</span><span class="bs">Bs 10</span></li>
+          <li><span>Tarta</span><span class="bs">Bs 10</span></li>
         </ul>
       </div>
+      </div>
+      <p class="tambien"><strong>También en el kiosco:</strong> jugos y aguas bien fríos (Del Valle, Aquarius y Vital), helados de cono y de palito, y snacks y golosinas de marcas reconocidas, según el día y la temporada.</p>
+    </section>
+  </div>
+
+  <section class="seccion marco" id="servicio" aria-labelledby="t-servicio">
+    <div class="cabeza">
+      <h2 id="t-servicio">Cómo trabajaríamos en su colegio</h2>
+    </div>
+    <div class="dos">
+      <div class="bloque">
+        <h3>El servicio</h3>
+        <dl>
+          <div><dt>Todos los momentos del día</dt><dd>Entrada, recreo y salida, en los turnos que tenga la institución.</dd></div>
+          <div><dt>Cocina propia</dt><dd>Pollo, hamburguesas y milanesas preparados cada día por nuestro equipo.</dd></div>
+          <div><dt>Supervisión de los dueños</dt><dd>Marcial y Marianela supervisan el servicio con visitas periódicas.</dd></div>
+          <div><dt>Variedad</dt><dd>27 productos de comida y panadería, además de bebidas, helados y snacks.</dd></div>
+        </dl>
+      </div>
+      <div class="bloque">
+        <h3>Nuestros compromisos</h3>
+        <dl>
+          <div><dt>Higiene</dt><dd>Personal con uniforme, gorro y carnet sanitario. Área de atención limpia toda la jornada.</dd></div>
+          <div><dt>Trato</dt><dd>Amable, cortés, eficiente y comprensivo con cada estudiante.</dd></div>
+          <div><dt>Precios</dt><dd>Lista fija y visible, aprobada por la administración, que no cambia durante el año.</dd></div>
+          <div><dt>Acuerdo</dt><dd>Alquiler mensual o alquiler con servicios en contraprestación, a convenir. Nos adecuamos a los horarios y normas de la institución. También atendemos actos, kermeses y reuniones.</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="respaldos">
+      <h3>Respaldos</h3>
+      <ul>
+        <li>Certificado de referencia de EMBOL S.A. (2010)</li>
+        <li>Historial de atención en instituciones educativas</li>
+        <li>NIT y documentos de la empresa</li>
+        <li>Carnets sanitarios del personal</li>
+      </ul>
+      <p>Presentamos copias a solicitud de la institución.</p>
     </div>
   </section>
 
-  <section id="tambien" aria-labelledby="h-tambien">
-    <div class="sec-head">
-      <h2 id="h-tambien">También en el kiosco</h2>
-      <p class="note">Según el día y la temporada</p>
+  <section class="seccion marco" id="trayectoria" aria-labelledby="t-trayectoria">
+    <div class="cabeza">
+      <h2 id="t-trayectoria">35 años en colegios de Santa Cruz</h2>
+      <p>Instituciones que atendimos, según nuestro historial de atención.</p>
     </div>
-    <div class="extras">
-      <div class="extra"><h3>Jugos y aguas</h3><p>Del Valle, Aquarius y agua Vital, bien fríos.</p></div>
-      <div class="extra"><h3>Helados</h3><p>Helado en cono de varios sabores, helados de palito y bolos.</p></div>
-      <div class="extra"><h3>Snacks y golosinas</h3><p>Galletas, nachos, chocolates y caramelos de marcas reconocidas.</p></div>
-    </div>
-  </section>
-
-  <section id="contacto" aria-labelledby="h-contacto">
-    <div class="contact">
+    <div class="historia">
+      <ol class="linea-tiempo">
+          <li><span class="anio">1994–1997</span><span>Comedor Universidad Evangélica</span></li>
+          <li><span class="anio">1996–2000</span><span>Comedor Tecnológico Santa Cruz</span></li>
+          <li><span class="anio">1996</span><span>Colegio Saint George</span></li>
+          <li><span class="anio">1997–1999</span><span>Comedor UCEBOL</span></li>
+          <li><span class="anio">2000–2002</span><span>Colegio Espíritu Santo</span></li>
+          <li><span class="anio">2001–2004</span><span>Colegio Mariscal Andrés de Santa Cruz</span></li>
+          <li><span class="anio">2004–2007</span><span>Colegio Dios es Amor</span></li>
+          <li><span class="anio">2005–2011</span><span>Colegio Hermanos Cavanis</span></li>
+          <li><span class="anio">2006–2011</span><span>Colegio Bethesda</span></li>
+          <li><span class="anio">2008–2014</span><span>Colegio Interamericano, Bella Vista</span></li>
+          <li><span class="anio">2008–2014</span><span>Colegio Nueva América</span></li>
+          <li><span class="anio">2009–2014</span><span>Colegio Bautista Boliviano Brasilero</span></li>
+          <li><span class="anio">2009–2014</span><span>Colegio Caritas</span></li>
+          <li><span class="anio">2012–2014</span><span>Eventos de la Gobernación Departamental de Santa Cruz</span></li>
+          <li><span class="anio">2013</span><span>Patio de comidas U.E.B.</span></li>
+          <li><span class="anio">2022–2025</span><span>Colegio Cervantino</span></li>
+          <li class="hoy"><span class="anio">Hoy</span><span>Kiosco del Colegio Caritas, turnos mañana y tarde</span></li>
+      </ol>
       <div>
-        <h2 id="h-contacto">¿Quiere M&amp;M en su colegio?</h2>
-        <p>Atendemos kioscos y comedores de instituciones educativas en Santa Cruz desde 1991. Escríbanos por WhatsApp para coordinar una reunión o una degustación.</p>
-        <div class="btns">
-          <a class="btn" href="https://wa.me/59170985627?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20Servicios%20M%26M" target="_blank" rel="noopener">WhatsApp 709-85627</a>
-          <a class="btn" href="https://wa.me/59170284635?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20Servicios%20M%26M" target="_blank" rel="noopener">WhatsApp 702-84635</a>
+        <figure class="cita">
+          <h3>Certificado de referencia</h3>
+          <blockquote>«…mantiene relaciones comerciales a partir del año 1991, realizando atención en Kioscos y comedores (Catering), demostrando responsabilidad y consecuencia en el cumplimiento de sus compromisos…»</blockquote>
+          <figcaption>EMBOL S.A. (Coca-Cola), Santa Cruz, noviembre de 2010.</figcaption>
+        </figure>
+        <div class="formacion">
+          <h3>Formación</h3>
+          <ul>
+            <li>Nutrición<span>Escuela Hotelera, 2000</span></li>
+            <li>Masas típicas<span>Escuela El Maná, 2000</span></li>
+            <li>Eventos buffet<span>Nueva Acrópolis, 2000</span></li>
+            <li>Contabilidad y costos<span>FUNDES Bolivia, 1996</span></li>
+            <li>Plan de negocios<span>Universidad Evangélica, 2006</span></li>
+          </ul>
         </div>
       </div>
-      <div class="lines">
-        <div class="line"><div><span class="lbl">WhatsApp</span><span class="val" id="v-wa1">709-85627</span></div><button class="copy" type="button" id="c-wa1" data-copy="70985627">Copiar</button></div>
-        <div class="line"><div><span class="lbl">WhatsApp</span><span class="val" id="v-wa2">702-84635</span></div><button class="copy" type="button" id="c-wa2" data-copy="70284635">Copiar</button></div>
-        <div class="line"><div><span class="lbl">Correo</span><span class="val" id="v-mail">marcialjimenez@hotmail.com</span></div><button class="copy" type="button" id="c-mail" data-copy="marcialjimenez@hotmail.com">Copiar</button></div>
-      </div>
     </div>
   </section>
-
 </main>
 
-<footer class="wrap">
-  <p><b>Servicios Gastronómicos M&amp;M</b> · Marcial Renato Jiménez T. y Marianela Arce de Jiménez · Santa Cruz de la Sierra, Bolivia.</p>
-  <p>Precios referenciales en bolivianos, vigentes en 2026. En cada institución la lista se acuerda con la administración.</p>
+<section class="cierre" id="contacto" aria-labelledby="t-contacto">
+  <div class="flecos-arriba" aria-hidden="true"></div>
+  <div class="marco cierre-dentro">
+    <div>
+      <h2 id="t-contacto">¿Conversamos?</h2>
+      <p>Coordinemos una reunión en su colegio. Puede descargar la propuesta completa para compartirla con la dirección.</p>
+      <div class="botones">
+        <a class="boton boton-amarillo js-pdf" href="/propuesta/servicios-mym-2027.pdf" download="Propuesta Servicios MyM 2027.pdf"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Descargar la propuesta (PDF)</a>
+      </div>
+    </div>
+    <div class="contactos">
+      <div class="contacto"><div><span class="que">WhatsApp</span><a class="num js-wa" href="https://wa.me/59170985627?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20la%20propuesta%20de%20Servicios%20M%26M" target="_blank" rel="noopener">709-85627</a></div><button class="copiar" type="button" data-copiar="70985627">Copiar</button></div>
+      <div class="contacto"><div><span class="que">WhatsApp</span><a class="num js-wa2" href="https://wa.me/59170284635?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20la%20propuesta%20de%20Servicios%20M%26M" target="_blank" rel="noopener">702-84635</a></div><button class="copiar" type="button" data-copiar="70284635">Copiar</button></div>
+      <div class="contacto"><div><span class="que">Correo</span><a class="num" href="mailto:marcialjimenez@hotmail.com">marcialjimenez@hotmail.com</a></div><button class="copiar" type="button" data-copiar="marcialjimenez@hotmail.com">Copiar</button></div>
+    </div>
+  </div>
+</section>
+
+<footer class="marco">
+  <p><b>Servicios Gastronómicos M&amp;M (Mejores Momentos).</b> Marcial Renato Jiménez T. y Marianela Arce de Jiménez, Santa Cruz de la Sierra, Bolivia.</p>
+  <p>Precios referenciales en bolivianos. <a href="https://drive.google.com/drive/folders/10JVXXFyH3jNBYnMkzdeuQmtNjzl0lcwW?usp=sharing" target="_blank" rel="noopener">Más fotos en nuestro Google Drive</a></p>
 </footer>
 
-<script>
-document.querySelectorAll('.copy').forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    var text = btn.getAttribute('data-copy');
-    var done = function () {
-      var old = btn.textContent;
-      btn.textContent = 'Copiado';
-      setTimeout(function () { btn.textContent = old; }, 1600);
-    };
-    var fallback = function () {
-      var val = btn.parentElement.querySelector('.val');
-      if (!val) return;
-      var r = document.createRange();
-      r.selectNodeContents(val);
-      var s = window.getSelection();
-      s.removeAllRanges();
-      s.addRange(r);
-      btn.textContent = 'Seleccionado';
-      setTimeout(function () { btn.textContent = 'Copiar'; }, 1600);
-    };
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done, fallback);
-      } else { fallback(); }
-    } catch (e) { fallback(); }
-  });
-});
-</script>
+<div class="barra" id="barra" aria-hidden="true">
+  <a class="boton boton-tinta js-pdf" href="/propuesta/servicios-mym-2027.pdf" download="Propuesta Servicios MyM 2027.pdf" tabindex="-1"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Propuesta</a>
+  <a class="boton boton-amarillo js-wa" href="https://wa.me/59170985627?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20la%20propuesta%20de%20Servicios%20M%26M" target="_blank" rel="noopener" tabindex="-1"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5Z"/></svg>WhatsApp</a>
+</div>
 
+<script>
+(function () {
+  var COLEGIOS = {"bautista": {"n": "Colegio Bautista Boliviano Brasilero", "a": "Entre 2009 y 2014 fuimos parte de su colegio, y nos encantaría volver."}, "lasalle": {"n": "Colegio La Salle", "a": ""}, "marista": {"n": "Colegio Marista", "a": ""}, "donbosco": {"n": "Colegio Don Bosco", "a": ""}, "interamericano": {"n": "Colegio Interamericano", "a": "Entre 2008 y 2014 fuimos parte de su colegio, y nos encantaría volver."}, "senorjesus": {"n": "Colegio Señor Jesús", "a": ""}, "henryprince": {"n": "Colegio Henry Prince", "a": ""}, "lasantacruz": {"n": "Colegio La Santa Cruz", "a": ""}, "mariagoretti": {"n": "Colegio María Goretti II", "a": ""}, "domingosavio": {"n": "Colegio Domingo Savio", "a": ""}, "isabelsaavedra": {"n": "Colegio Isabel Saavedra", "a": ""}, "adventista": {"n": "Colegio Adventista", "a": ""}};
+  var slug = location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+  var c = COLEGIOS[slug];
+  if (c) {
+    document.getElementById('para-nombre').textContent = 'Propuesta para el ' + c.n;
+    document.getElementById('para-nota').textContent = c.a;
+    document.getElementById('para').classList.add('si');
+    document.title = 'Propuesta para el ' + c.n + ' | Servicios M&M';
+    document.querySelectorAll('.js-pdf').forEach(function (a) {
+      a.href = '/propuesta/' + slug + '.pdf';
+      a.setAttribute('download', 'Propuesta Servicios MyM 2027 - ' + c.n + '.pdf');
+    });
+    var msg = encodeURIComponent('Hola, les escribo del ' + c.n + ' sobre la propuesta de Servicios M&M');
+    document.querySelectorAll('.js-wa').forEach(function (a) { a.href = 'https://wa.me/59170985627?text=' + msg; });
+    document.querySelectorAll('.js-wa2').forEach(function (a) { a.href = 'https://wa.me/59170284635?text=' + msg; });
+  }
+
+  document.querySelectorAll('.copiar').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.getAttribute('data-copiar');
+      var listo = function () { b.textContent = 'Copiado'; setTimeout(function () { b.textContent = 'Copiar'; }, 1600); };
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(t).then(listo, function () {}); }
+    });
+  });
+
+  var barra = document.getElementById('barra');
+  if ('IntersectionObserver' in window) {
+    var arriba = true, cierre = false;
+    var pintar = function () {
+      var ver = !arriba && !cierre;
+      barra.classList.toggle('ver', ver);
+      barra.setAttribute('aria-hidden', ver ? 'false' : 'true');
+      barra.querySelectorAll('a').forEach(function (a) { a.tabIndex = ver ? 0 : -1; });
+    };
+    new IntersectionObserver(function (es) { arriba = es[es.length - 1].isIntersecting; pintar(); }).observe(document.getElementById('botones-portada'));
+    new IntersectionObserver(function (es) { cierre = es[es.length - 1].isIntersecting; pintar(); }).observe(document.getElementById('contacto'));
+  }
+})();
+</script>
 </body>
 </html>
